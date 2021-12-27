@@ -1,7 +1,7 @@
 # SimpleNN
 Very simple neural network library for genetic algorithms.
 ## Usage
-´´´cpp
+`cpp
 #include "simple_nn.hpp"
 int main() {
     // define activation functions:
@@ -27,7 +27,7 @@ int main() {
 		return 0;
 }
 
-´´´
+´
 
 ## Contributing
 if you somehow find this project, you can make commits and pull requests. I will review them when I have the time.
