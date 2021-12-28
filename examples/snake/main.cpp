@@ -1,5 +1,27 @@
-#include "simple_nn.hpp"
 #include <curses.h>
+#include <iostream>
+
+#include "simple_nn.hpp"
+#include "snake.hpp"
+
+void drawSnake(snake& s, WINDOW* win) {
+    wclear(win);
+    for (int y = 0; y < s.map.size(); y++)
+    {
+        for (int x = 0; x < s.map.size(); x++)
+        {
+            move(y, x);
+            auto c = s.map[y][x];
+            waddch(win,c);
+        }    
+    }
+    
+}
+
+std::vector<neural_net> generateNetworks() {
+
+}
+
 int main() {
 
     auto linear = std::make_shared<std::function<float(float)>>([](float x){return x;});
@@ -17,12 +39,17 @@ int main() {
 
     network.mutate(10.0f);
 
+    
 
     // TODO Snake game and evolution
+    auto s = snake(10);
     auto window = initscr();
-    box(window, 0, 0);
-    move(1,1);
-    printw("Hello curses!");
+    s.update();
+    drawSnake(s, window);
+    getch();
+    s.update();
+    drawSnake(s, window);
+    refresh();
     getch();
     endwin();
     exit_curses(0);
