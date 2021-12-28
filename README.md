@@ -4,7 +4,7 @@ Very simple neural network library for genetic algorithms.
 ```cpp
 #include "simple_nn.hpp"
 int main() {
-    // define activation functions:
+	// define activation functions:
 	auto linear = std::make_shared<std::function<float(float)>>([](float x){return x;});
 	auto relu = std::make_shared<std::function<float(float)>>([](float x){return std::max(0.0f, x);});
 	// Add layers with
