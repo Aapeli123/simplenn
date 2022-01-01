@@ -5,8 +5,8 @@
 class neural_net
 {
 private:
-    std::vector<layer*> layers;
 public:
+    std::vector<layer*> layers;
     neural_net();
     void add_layer(layer* layer);
     void run_step();

@@ -34,13 +34,14 @@ enum Direction {
 class snake
 {
 private:
-    std::vector<point> snake_blocks;
-    point apple;
-    bool lost = false;
     std::mt19937 random_engine;
     point prev_last_tail;
 public:
-    std::vector<std::vector<char>> map;
+    int turnCounter = 0;
+    bool lost = false;
+    std::vector<point> snake_blocks;
+    point apple;
+    int mapWidth;
     Direction snake_direction;
     snake(int map_width);
     void update();
