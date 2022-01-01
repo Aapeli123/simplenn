@@ -9,6 +9,7 @@ neuron::neuron(activation_function activator_fn)
     bias_weigth = 0.0f;
 }
 
+
 void neuron::calculateValue() {
     float sum = 0;
     for(auto c: connections) {

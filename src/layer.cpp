@@ -1,5 +1,5 @@
 #include "layer.hpp"
-
+#include <ctime>
 layer::layer(int neuron_count, std::optional<layer*> prev_layer, activation_function activator) {
     for(long long i = 0; i < neuron_count; i++) {
         layerNeurons.push_back(neuron(activator));
@@ -16,6 +16,7 @@ layer::layer(int neuron_count, std::optional<layer*> prev_layer, activation_func
     }
 
     rng = std::mt19937();
+    rng.seed(std::time(0));
 }
 
 void layer::add_random(float mutation_amount) {
