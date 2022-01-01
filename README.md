@@ -10,7 +10,7 @@ int main() {
 	// Add layers with
 	ADD_LAYER(input, network, 5, std::nullopt, linear);
 	// Expands to:
-	// auto input = layer(5e, std::nulloptr, linear);
+	// auto input = layer(5, std::nulloptr, linear);
 	// network.add_layer(&input)
 
 	ADD_LAYER(hidden_1, network, 10, &input, relu);
